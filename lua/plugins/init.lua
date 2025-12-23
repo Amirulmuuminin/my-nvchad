@@ -46,13 +46,38 @@ return {
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
-}
+ {
+  "nvim-treesitter/nvim-treesitter",
+  opts = {
+    ensure_installed = {
+      -- Core
+      "vim",
+      "lua",
+      "vimdoc",
+      
+      -- Web
+      "html",
+      "css",
+      "javascript",
+      "typescript",
+      "tsx",           -- React/JSX dengan TypeScript
+      "astro",         -- Astro
+
+      -- Infrastructure
+      "terraform",     -- Terraform
+      "hcl",           -- Terraform config language
+      -- Extras (recommended)
+      "json",
+      "markdown",
+      "markdown_inline",
+      "bash",
+    },
+
+    highlight = {
+      enable = true,
+      use_languagetree = true,
+    },
+
+    indent = { enable = true },
+  },
+},}
