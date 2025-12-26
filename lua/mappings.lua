@@ -1,5 +1,4 @@
 require "nvchad.mappings"
-
 -- add yours here
 
 local map = vim.keymap.set
@@ -28,4 +27,11 @@ map("n", "<leader>x", function()
   end
 end, { desc = "Close buffer or quit nvim" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
--- coba dulu
+
+-- Mode Normal: Pindahkan baris aktif ke atas/bawah
+map("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move line down" })
+map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
+
+-- Mode Visual: Pindahkan blok yang diseleksi ke atas/bawah
+map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
+map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
