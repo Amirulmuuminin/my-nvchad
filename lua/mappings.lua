@@ -47,3 +47,6 @@ map("n", "<leader>s", "<cmd> w <CR>", { desc = "Save file" })
 map("n", "<leader>h", function()
   require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
 end, { desc = "Terminal Toggle Horizontal" })
+
+-- Membuka LazyGit
+map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Toggle LazyGit" })

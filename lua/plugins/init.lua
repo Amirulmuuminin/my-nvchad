@@ -90,5 +90,13 @@ return {
       git_ignored = false,
     },
   },
+},
+
+  {
+  "kdheepak/lazygit.nvim",
+  lazy = false,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
 }
 }
