@@ -54,7 +54,6 @@ return {
       "vim",
       "lua",
       "vimdoc",
-      
       -- Web
       "html",
       "css",
@@ -79,6 +78,15 @@ return {
     },
 
     indent = { enable = true },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<CR>",    -- Tekan Enter untuk mulai seleksi
+        node_incremental = "<CR>", -- Tekan Enter lagi untuk memperlebar (otomatis deteksi {} [] tag dll)
+        scope_incremental = false,
+        node_decremental = "<bs>",  -- Tekan Backspace untuk memperkecil seleksi
+      },
+    },
   },
 },
 
@@ -98,5 +106,11 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  config = function()
+    -- Mengatur agar LazyGit menggunakan nvim yang sedang aktif untuk mengedit file
+    vim.g.lazygit_floating_window_winblend = 0 -- membuat jendela tidak transparan
+    vim.g.lazygit_use_neovim_remote = 1 -- Gunakan sesi nvim yang sama
+  end
 }
+
 }
