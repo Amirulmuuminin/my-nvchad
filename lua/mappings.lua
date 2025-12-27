@@ -50,3 +50,12 @@ end, { desc = "Terminal Toggle Horizontal" })
 
 -- Membuka LazyGit
 map("n", "<leader>gg", "<cmd>LazyGit<CR>", { desc = "Toggle LazyGit" })
+
+-- Select All di Normal Mode
+map("n", "<C-a>", "ggVG", { desc = "Select all" })
+
+-- Select All di Insert Mode (otomatis pindah ke Visual Mode)
+map("i", "<C-a>", "<Esc>ggVG", { desc = "Select all" })
+
+-- Select All di Visual Mode (untuk memastikan tetap ter-select)
+map("v", "<C-a>", "<Esc>ggVG", { desc = "Select all" })
