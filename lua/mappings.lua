@@ -1,6 +1,5 @@
 require "nvchad.mappings"
 -- add yours here
-
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
@@ -35,3 +34,16 @@ map("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move line up" })
 -- Mode Visual: Pindahkan blok yang diseleksi ke atas/bawah
 map("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
+
+-- Memaksa kursor selalu berada di posisi yang sama di layar setelah bergerak
+map("n", "j", "jzz", { noremap = true })
+map("n", "k", "kzz", { noremap = true })
+
+-- Mengubah leader e menjadi toggle file tree (sama seperti Ctrl + n)
+map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle nvimtree" })
+map("n", "<leader>s", "<cmd> w <CR>", { desc = "Save file" })
+
+-- Leader + h untuk toggle terminal horizontal (sama seperti Alt + h)
+map("n", "<leader>h", function()
+  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+end, { desc = "Terminal Toggle Horizontal" })
